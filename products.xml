@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<products>
+    <category name="Торты и Пирожные">
+        <product id="1">
+            <n>Шоколадный торт</n>
+            <description>Нежный шоколадный торт с вишней</description>
+            <price>15.99</price>
+            <image>cake.jpg</image>
+            <stock>10</stock>
+            <tags>торт,шоколад,вишня</tags>
+        </product>
+        <product id="8">
+            <n>Чизкейк</n>
+            <description>Нежный чизкейк с ягодным топпингом</description>
+            <price>12.99</price>
+            <image>cheesecake.jpg</image>
+            <stock>15</stock>
+            <tags>чизкейк,торт,ягоды</tags>
+        </product>
+        <product id="16">
+            <n>Шоколадный мусс</n>
+            <description>Воздушный шоколадный мусс с карамелью</description>
+            <price>6.99</price>
+            <image>chocolate_mousse.jpg</image>
+            <stock>12</stock>
+            <tags>мусс,шоколад,десерт</tags>
+        </product>
+        <product id="18">
+            <n>Пирожное "Картошка"</n>
+            <description>Классическое пирожное с какао и крошкой</description>
+            <price>2.50</price>
+            <image>potato_cake.jpg</image>
+            <stock>55</stock>
+            <tags>пирожное,какао</tags>
+        </product>
+    </category>
+
+    <category name="Шоколад и Конфеты">
+        <product id="10">
+            <n>Шоколадные трюфели</n>
+            <description>Шоколадные трюфели с начинкой из сливок</description>
+            <price>9.99</price>
+            <image>chocolate_truffles.jpg</image>
+            <stock>28</stock>
+            <tags>трюфели,шоколад,конфеты</tags>
+        </product>
+        <product id="13">
+            <n>Мятный шоколад</n>
+            <description>Темный шоколад с мятной начинкой</description>
+            <price>4.99</price>
+            <image>mint_chocolate.jpg</image>
+            <stock>22</stock>
+            <tags>шоколад,мята</tags>
+        </product>
+        <product id="19">
+            <n>Молочный шоколад</n>
+            <description>Нежный молочный шоколад с орехами</description>
+            <price>3.75</price>
+            <image>milk_chocolate.jpg</image>
+            <stock>33</stock>
+            <tags>шоколад,орехи</tags>
+        </product>
+    </category>
+
+    <category name="Печенье и Выпечка">
+        <product id="5">
+            <n>Печенье с шоколадной крошкой</n>
+            <description>Хрустящее печенье с кусочками шоколада</description>
+            <price>7.99</price>
+            <image>chocolate_chip_cookies.jpg</image>
+            <stock>40</stock>
+            <tags>печенье,шоколад</tags>
+        </product>
+        <product id="9">
+            <n>Миндальное печенье</n>
+            <description>Хрустящее печенье с миндалем</description>
+            <price>5.50</price>
+            <image>almond_cookies.jpg</image>
+            <stock>45</stock>
+            <tags>печенье,миндаль</tags>
+        </product>
+        <product id="11">
+            <n>Кокосовый макарун</n>
+            <description>Нежный кокосовый макарун с хрустящей корочкой</description>
+            <price>3.50</price>
+            <image>coconut_macaroon.jpg</image>
+            <stock>50</stock>
+            <tags>макарун,кокос</tags>
+        </product>
+        <product id="20">
+            <n>Пончики с глазурью</n>
+            <description>Пончики с сахарной глазурью и посыпкой</description>
+            <price>4.25</price>
+            <image>glazed_donuts1.jpg</image>
+            <stock>27</stock>
+            <tags>пончики,глазурь</tags>
+        </product>
+    </category>
+
+    <category name="Мороженое и Замороженные Десерты">
+        <product id="3">
+            <n>Ванильное мороженое</n>
+            <description>Классическое ванильное мороженое с нежным вкусом</description>
+            <price>4.50</price>
+            <image>vanilla_icecream.jpg</image>
+            <stock>30</stock>
+            <tags>мороженое,ваниль</tags>
+        </product>
+        <product id="17">
+            <n>Фруктовый лед</n>
+            <description>Освежающий фруктовый лед с разными вкусами</description>
+            <price>1.99</price>
+            <image>fruit_ice.jpg</image>
+            <stock>70</stock>
+            <tags>лед,фрукты</tags>
+        </product>
+    </category>
+
+    <category name="Сладкие Снеки">
+        <product id="2">
+            <n>Мармеладные мишки</n>
+            <description>Яркие мармеладные мишки с фруктовым вкусом</description>
+            <price>5.99</price>
+            <image>gummy_bears.jpg</image>
+            <stock>50</stock>
+            <tags>мармелад,мишки</tags>
+        </product>
+        <product id="7">
+            <n>Карамельный попкорн</n>
+            <description>Воздушный попкорн с карамельной глазурью</description>
+            <price>6.50</price>
+            <image>caramel_popcorn.jpg</image>
+            <stock>35</stock>
+            <tags>попкорн,карамель</tags>
+        </product>
+        <product id="14">
+            <n>Ореховый батончик</n>
+            <description>Батончик с орехами и медом</description>
+            <price>2.99</price>
+            <image>nut_bar.jpg</image>
+            <stock>60</stock>
+            <tags>батончик,орехи,мед</tags>
+        </product>
+    </category>
+
+    <category name="Фрукты и Джемы">
+        <product id="4">
+            <n>Клубничный джем</n>
+            <description>Натуральный клубничный джем без консервантов</description>
+            <price>3.99</price>
+            <image>strawberry_jam.jpg</image>
+            <stock>25</stock>
+            <tags>джем,клубника</tags>
+        </product>
+        <product id="6">
+            <n>Фруктовый салат</n>
+            <description>Свежий фруктовый салат с сезонными фруктами</description>
+            <price>8.99</price>
+            <image>fruit_salad.jpg</image>
+            <stock>20</stock>
+            <tags>фрукты,салат</tags>
+        </product>
+        <product id="15">
+            <n>Клубничный йогурт</n>
+            <description>Натуральный йогурт с кусочками клубники</description>
+            <price>3.25</price>
+            <image>strawberry_yogurt.jpg</image>
+            <stock>40</stock>
+            <tags>йогурт,клубника</tags>
+        </product>
+    </category>
+</products>

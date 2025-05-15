@@ -1,0 +1,226 @@
+<div class="catalog-header">
+    <h1>Our Products</h1>
+    <div class="category-filters">
+        {{#each products}}
+            <button class="category-filter" data-category="{{name}}">{{name}}</button>
+        {{/each}}
+        <button class="category-filter active" data-category="all">All Products</button>
+    </div>
+</div>
+
+<div class="catalog-container">
+    {{#each products}}
+        <div class="category-section" data-category="{{name}}">
+            <h2>{{name}}</h2>
+            <div class="product-grid">
+                {{#each product}}
+                    <div class="product-card">
+                        <div class="product-image-container">
+                            <img src="/images/products/{{image}}" alt="{{name}}" class="product-image">
+                        </div>
+                        <div class="product-info">
+                            <h3>{{name}}</h3>
+                            <p class="description">{{description}}</p>
+                            <p class="price">${{price}}</p>
+                            <p class="stock">In Stock: {{stock}}</p>
+                            {{#if ../../user}}
+                                <form class="add-to-cart-form" data-product-id="{{id}}">
+                                    <div class="quantity-control">
+                                        <label for="quantity-{{id}}">Quantity:</label>
+                                        <input type="number" id="quantity-{{id}}" name="quantity" value="1" min="1" max="{{stock}}">
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">Add to Cart</button>
+                                </form>
+                            {{else}}
+                                <a href="/login" class="btn btn-secondary">Login to Purchase</a>
+                            {{/if}}
+                        </div>
+                    </div>
+                {{/each}}
+            </div>
+        </div>
+    {{/each}}
+</div>
+
+<style>
+.catalog-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.catalog-header h1 {
+    font-size: 2.5em;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.category-filters {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+}
+
+.category-filter {
+    padding: 0.5rem 1rem;
+    border: 2px solid #e44d26;
+    background: transparent;
+    color: #e44d26;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.category-filter:hover,
+.category-filter.active {
+    background: #e44d26;
+    color: white;
+}
+
+.catalog-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.category-section {
+    margin-bottom: 3rem;
+}
+
+.category-section h2 {
+    color: #333;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #e44d26;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.product-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    background: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: transform 0.2s;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+}
+
+.product-image-container {
+    height: 200px;
+    overflow: hidden;
+    background: #f5f5f5;
+}
+
+.product-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.product-info {
+    padding: 1.5rem;
+}
+
+.product-info h3 {
+    margin: 0 0 0.5rem;
+    color: #333;
+}
+
+.description {
+    color: #666;
+    margin-bottom: 1rem;
+    font-size: 0.9em;
+}
+
+.price {
+    font-size: 1.3em;
+    color: #e44d26;
+    font-weight: bold;
+    margin: 0.5rem 0;
+}
+
+.stock {
+    color: #28a745;
+    font-size: 0.9em;
+    margin-bottom: 1rem;
+}
+
+.quantity-control {
+    margin-bottom: 1rem;
+}
+
+.quantity-control label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #666;
+}
+
+.quantity-control input {
+    width: 80px;
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+@media (max-width: 768px) {
+    .product-grid {
+        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    }
+    
+    .product-info {
+        padding: 1rem;
+    }
+}
+</style>
+
+<script>
+$(document).ready(function() {
+    // Category filter functionality
+    $('.category-filter').click(function() {
+        const category = $(this).data('category');
+        
+        // Update active state of filter buttons
+        $('.category-filter').removeClass('active');
+        $(this).addClass('active');
+        
+        if (category === 'all') {
+            $('.category-section').show();
+        } else {
+            $('.category-section').hide();
+            $(`.category-section[data-category="${category}"]`).show();
+        }
+    });
+
+    // Add to cart functionality
+    $('.add-to-cart-form').on('submit', function(e) {
+        e.preventDefault();
+        const form = $(this);
+        const productId = form.data('product-id');
+        const quantity = form.find('input[name="quantity"]').val();
+
+        $.ajax({
+            url: `/cart/add/${productId}`,
+            method: 'POST',
+            data: { quantity: quantity },
+            success: function(response) {
+                if (response.success) {
+                    $('.cart-count').text(response.cartCount);
+                    alert('Product added to cart!');
+                }
+            },
+            error: function() {
+                alert('Error adding product to cart');
+            }
+        });
+    });
+});
+</script> 
